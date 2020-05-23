@@ -1,0 +1,3 @@
+- [Home](/)
+- [@statirjs/core](content/core/home.md)
+- - [Example](content/core/example.md)

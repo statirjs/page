@@ -1,6 +1,7 @@
 # MILESTONE №1 (May 21, 2020 - today)
 
-- [ ] Add sidebar
+- [x] Init sidebar
 - [ ] Add title
-- [ ] Add welcome content
-- [ ] Add example content
+- [ ] Init welcome content
+- [ ] Init example content
+- [x] Add docsify

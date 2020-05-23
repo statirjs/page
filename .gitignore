@@ -1,0 +1,5 @@
+# DIRS
+node_modules
+
+# FILES
+.DB_Store

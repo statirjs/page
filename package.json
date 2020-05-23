@@ -1,7 +1,7 @@
 {
-  "name": "page",
+  "name": "@statirjs/page",
   "version": "1.0.0",
-  "description": "statirjs github page",
+  "description": "Statirjs github page",
   "main": "index.html",
   "scripts": {
     "docsify:serve": "npx docsify serve"
@@ -12,7 +12,7 @@
   },
   "keywords": [
     "statirjs",
-    "github-pages"
+    "github-page"
   ],
   "author": "Andrey Krasovsky",
   "license": "MIT",
@@ -22,5 +22,6 @@
   "homepage": "https://github.com/statirjs/page#readme",
   "devDependencies": {
     "docsify-cli": "^4.4.0"
-  }
+  },
+  "dependencies": {}
 }

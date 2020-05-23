@@ -5,3 +5,5 @@
 - [ ] Init welcome content
 - [ ] Init example content
 - [x] Add docsify
+- [x] Pr template
+- [x] Issue template

@@ -1,6 +1,6 @@
-# How to use statirjs?
+# How to use @statirjs/core?
 
-**1. Install statirjs**
+**1. Install @statirjs/core**
 
 ```shell
 npm i @statirjs/core

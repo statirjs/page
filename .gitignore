@@ -1,5 +1,6 @@
-# DIRS
-node_modules
-
-# FILES
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+vendor
 .DB_Store

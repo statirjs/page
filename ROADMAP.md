@@ -1,9 +1,17 @@
 # MILESTONE №1 (May 21, 2020 - today)
 
 - [x] Init sidebar
-- [ ] Add title
-- [ ] Init welcome content
-- [ ] Init example content
-- [x] Add docsify
+- [x] Add icon
+- [ ] Add welcome content
+- [x] Init docsify
 - [x] Pr template
 - [x] Issue template
+- [ ] Add core quick start doc
+- [x] Add core forms doc
+- [ ] Add core store doc
+- [ ] Add core typing doc
+- [ ] Add core middlewares doc
+- [ ] Add core upgrades doc
+- [ ] Add core plugins doc
+- [x] Add core example doc
+- [ ] Add contributing guide doc

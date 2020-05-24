@@ -20,6 +20,16 @@ const testForme = createForme(
         };
       },
     },
+    pipes: {
+      asyncIncrement: {
+        push(state) {
+          return {
+            ...state,
+            count: state.count + 1,
+          };
+        },
+      },
+    },
   })
 );
 ```
@@ -65,6 +75,34 @@ const testForme = createForme(
 const formeState = {
   count: 0,
 };
+```
+
+#### Dispatch
+
+For connecting the **forme** to another forms of [**store**](/content/core/store.md) user can define [**dispatch**](/content/core/store.md) as first parameter in **forme builder** and then calls other **pipes** and **actions**.
+
+```js
+import { createForme, Dispatch } from "@statirjs/core";
+
+const testForme = createForme(
+  {
+    count: 0,
+  },
+  (dispatch: Dispatch) => ({
+    pipes: {
+      asyncIncrement: {
+        push(state) {
+          dispatch.someForme.somePipe();
+
+          return {
+            ...state,
+            count: state.count + 1,
+          };
+        },
+      },
+    },
+  })
+);
 ```
 
 #### Forme builder
@@ -243,4 +281,23 @@ const pipes = {
 
 11. only **push** step in **pipe** is required
 
-12. **pipe** steps must be an functions
+#### Return value
+
+**createForme** function parse arguments into compatible with [**store**](/content/core/store.md) object.
+
+```js
+export interface ReFormeBuilder<
+  T extends State = State,
+  K extends Forme<T> = Forme
+> {
+  state: T;
+  getForme(
+    rootState: RootState,
+    dispatch: Dispatch,
+    updateState: UpdateState,
+    formeName: string
+  ): ReForme<K>;
+}
+```
+
+If you want somehow enhance creation of **forms** or reshape default **forme** (add beside **actions** and **pipes** some selectors for example), then you must use [**plugins**](/content/core/plugins.md).

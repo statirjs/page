@@ -6,12 +6,10 @@
 - [x] Init docsify
 - [x] Pr template
 - [x] Issue template
-- [ ] Add core quick start doc
+- [x] Add core quick start doc
 - [x] Add core forms doc
 - [ ] Add core store doc
-- [ ] Add core typing doc
 - [ ] Add core middlewares doc
 - [ ] Add core upgrades doc
 - [ ] Add core plugins doc
-- [x] Add core example doc
 - [ ] Add contributing guide doc

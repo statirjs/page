@@ -2,12 +2,16 @@
 
 #### Description
 
-**"Forme"** in @statirjs/core is a base unit for build functional pice of store. User must use **createForme** function to create [**store**](/content/core/store.md) compatibility object.
+**"Forme"** in @statirjs/core is a base unit for build independent pice of [**store**](/content/core/store.md). User must use **createForme** function to create object full of needed actions and compatible with **store**.
+
+#### Declaration
+
+**Forme** it's just factory function with two params.
 
 ```js
 import { createForme } from "@statirjs/core";
 
-const testForme = createForme(
+const counter = createForme(
   {
     count: 0,
   },
@@ -20,21 +24,11 @@ const testForme = createForme(
         };
       },
     },
-    pipes: {
-      asyncIncrement: {
-        push(state) {
-          return {
-            ...state,
-            count: state.count + 1,
-          };
-        },
-      },
-    },
   })
 );
 ```
 
-> **_NOTE:_** If you use [**typescript**](https://www.typescriptlang.org/) then for more convenience in future (when you will select data from [**store**](/content/core/store.md) and etc) you can pass state forme as typed object.
+> **_NOTE:_** If you use [**typescript**](https://www.typescriptlang.org/) then for more convenience in future (when you will be select data from [**store**](/content/core/store.md) and etc) you can pass state forme as typed object.
 >
 > ```js
 > import { createForme } from "@statirjs/core";
@@ -47,7 +41,7 @@ const testForme = createForme(
 >   count: 0,
 > };
 >
-> const testForme = createForme(state, () => ({
+> const counter = createForme(state, () => ({
 >   actions: {
 >     increment(state) {
 >       return {
@@ -63,100 +57,121 @@ const testForme = createForme(
 
 **createForme** function receive two arguments:
 
-1. local **forme** state object (**forme state**)
-
-2. function that return object with **actions** and **pipes** (**forme builder**)
-
-#### Forme state
-
-**Forme state** is required argument and must be an plain object
+1. required local **forme** state plain object === **forme state**
 
 ```js
-const formeState = {
+const counterState = {
   count: 0,
 };
+
+const counter = createForme(counterState);
+```
+
+2. not required function that return object with **actions** and **pipes** === **forme builder**
+
+```js
+const counterBuilder = ( ... ) => ({
+    actions: {
+      ...
+    },
+    pipes: {
+      ...
+    }
+})
+
+const counter = createForme(counterState, counterBuider);
 ```
 
 #### Dispatch
 
-For connecting the **forme** to another forms of [**store**](/content/core/store.md) user can define [**dispatch**](/content/core/store.md) as first parameter in **forme builder** and then calls other **pipes** and **actions**.
+For connection **forms** between each other user can define [**dispatch**](/content/core/store.md) as first parameter in **forme builder** and then calls **pipes** and **actions** of others **formes**.
 
 ```js
-import { createForme, Dispatch } from "@statirjs/core";
-
-const testForme = createForme(
-  {
-    count: 0,
-  },
+const counter = createForme(
+  ... ,
   (dispatch: Dispatch) => ({
-    pipes: {
-      asyncIncrement: {
-        push(state) {
-          dispatch.someForme.somePipe();
-
-          return {
-            ...state,
-            count: state.count + 1,
-          };
-        },
-      },
+    actions: {
+      ...
     },
   })
 );
 ```
 
-#### Forme builder
-
-**Forme builder** is not required argument
-
 #### Actions
 
-**Actions** is simple sync functions for store state update.
+**Actions** it is strictly synchronous js functions for store state update.
 
-1. **actions** and **pipes** is also not required property
+1. **actions** and **pipes** it is not required property
+
+```js
+const counterBuilder = () => ({}); 👍
+```
 
 2. **actions** and **pipes** must be an plain objects
 
+```js
+const counterBuilder = () => ({ 👍
+  actions: { ... },
+  pipes: { ... },
+});
+```
+
 3. **action** in **actions** must be a function
 
-4. **action** must return next **forme state** object for parent **forme**
+```js
+const counterBuilder = () => ({ 👍
+  actions: {
+    increment() { ... }
+  },
+});
+```
 
-5. **action** receive two argument: current **forme state**, payload
-
-> **_NOTE:_** for [**typescript**](https://www.typescriptlang.org/) is no need to define **action** first parameter **forme state** type (it will used form first **createForme** argument type)
+4. **action** must return next **forme state** object for **forme**
 
 ```js
-const actions = {
-  identity1(state) {
-    return state; // you can return state as is
-  }, // Ok
-  identity2(state) {
-    return {
-      ...state, // or new object, for @statirjs/core is no different
-    };
-  }, // Ok
-  increment(state) {
-    return {
-      ...state,
-      count: state.count + 1,
-    };
-  }, // Ok
-  add(state, payload: number) {
-    return {
-      ...state,
-      count: state.count + payload,
-    };
-  }, // Ok
-  reset() {
-    return {
-      count: 0,
-    };
-  }, // Ok
-  errorAction1() {
-    console.log("");
-  }, // Error
-};
+const counterBuilder = () => ({ 👍
+  actions: {
+    resetState() {
+      return {
+        count: 0
+      };
+    }
+  },
+});
+
+const counterBuilder = () => ({ 👎
+  actions: {
+    consoleHello() {
+      console.log('Hello @statirjs/core!);
+    }
+  },
+});
 ```
+
+5. **action** receive two argument: current **forme state** and payload
+
+```js
+const counterBuilder = () => ({ 👍
+  actions: {
+    tap(state) {
+      return state;
+    }
+  },
+});
+
+const counterBuilder = () => ({ 👍
+  actions: {
+    addNumber(state, payload: number) {
+      return {
+        ...state,
+        count: state.count + payload
+      };
+    }
+  },
+});
+```
+
+> **_NOTE:_** for [**typescript**](https://www.typescriptlang.org/) it is no need to define **action** first parameter type (it will extracted from first **createForme** argument)
 
 #### Pipes
 

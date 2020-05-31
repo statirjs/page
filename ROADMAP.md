@@ -9,9 +9,9 @@
 - [x] Add core quick start doc
 - [x] Add core forms doc
 - [ ] Add core store doc
+- [ ] Add core home
 - [x] Add core middlewares doc
-- [ ] Add core upgrades doc
-- [ ] Add core plugins doc
+- [x] Add core upgrades doc
 - [ ] Add contributing guide doc
 - [x] Set main color
-- [ ] Migrate logo
+- [x] Migrate logo

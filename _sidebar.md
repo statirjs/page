@@ -5,5 +5,4 @@
 - - [Store](content/core/store.md)
 - - [Middlewares](content/core/middlewares.md)
 - - [Upgrades](content/core/upgrades.md)
-- - [Plugins](content/core/plugins.md)
 - [**Contributing guide**](/)

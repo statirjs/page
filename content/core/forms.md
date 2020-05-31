@@ -2,7 +2,7 @@
 
 #### Description
 
-**"Forme"** in @statirjs/core is a base unit for build independent pice of [**store**](/content/core/store.md). User must use **createForme** function to create object full of needed actions and compatible with **store**
+**"Forme"** in **@statirjs/core** is a base unit for build independent pice of [**store**](/content/core/store.md). User must use **createForme** function to create object full of needed actions and compatible with **store**
 
 #### Declaration
 
@@ -28,7 +28,7 @@ const counter = createForme(
 );
 ```
 
-> **_NOTE:_** If you use [**typescript**](https://www.typescriptlang.org/) then for more convenience in future (when you will be select data from [**store**](/content/core/store.md) and etc) you can pass state forme as typed object
+> **NOTE:** If you use [**typescript**](https://www.typescriptlang.org/) then for more convenience in future (when you will be select data from [**store**](/content/core/store.md) and etc) you can pass state forme as typed object
 >
 > ```js
 > import { createForme } from "@statirjs/core";
@@ -53,7 +53,7 @@ const counter = createForme(
 > }));
 > ```
 
-#### Arguments
+#### Arguments requirements
 
 **createForme** function receive two arguments:
 
@@ -91,7 +91,7 @@ const counter = createForme(
 );
 ```
 
-#### Actions
+#### Actions requirements
 
 **Actions** it is strictly synchronous js functions for store state update
 
@@ -165,9 +165,9 @@ const counterBuilder = () => ({ 👍
 });
 ```
 
-> **_NOTE:_** for [**typescript**](https://www.typescriptlang.org/) it is no need to define **action** first parameter type (it will extracted from first **createForme** argument)
+> **NOTE:** for [**typescript**](https://www.typescriptlang.org/) it is no need to define **action** first parameter type (it will extracted from first **createForme** argument)
 
-#### Pipes
+#### Pipes requirements
 
 **Pipes** in **forme** used to describe asynchronous actions divided into specific steps. All **pipe's** catch an errors in **core** (and **done**) step where user can do (as suggested in **@statirjs/core** design) some asynchron work. User can write asynchronous **pipes** with native js async/await or Promise functionality
 
@@ -400,5 +400,3 @@ export interface ReFormeBuilder<
   ): ReForme<K>;
 }
 ```
-
-If you want somehow enhance creation of **forms** or reshape default **forme** (add beside **actions** and **pipes** some selectors for example), then you must use [**plugins**](/content/core/plugins.md)

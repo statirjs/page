@@ -1,6 +1,6 @@
 # Quick start
 
-1. install @statirjs/core
+1. install **@statirjs/core**
 
 ```shell
 npm i @statirjs/core
@@ -38,12 +38,17 @@ const store = initStore({
     counter,
   },
 });
-
-type IState = typeof store.state;
-type IDispatch = typeof store.dispatch;
 ```
 
-4. subscribe to **store** state changes
+> **NOTE:** for [**typescript**](https://www.typescriptlang.org/) it is possible extra preparation
+>
+> ```js
+> type IStore = typeof store;
+> type IState = typeof store.state;
+> type IDispatch = typeof store.dispatch;
+> ```
+
+1. subscribe to **store** state changes
 
 ```js
 function listner(state: IState) {

@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/statirjs/page/issues"
   },
-  "homepage": "https://statirjs.github.io/page/",
+  "homepage": "https://statirjs.github.io/page/#/content/page/home",
   "devDependencies": {
     "docsify-cli": "^4.4.0"
   },

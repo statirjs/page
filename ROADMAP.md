@@ -2,6 +2,7 @@
 
 - [ ] Add page home doc
 - [ ] Add page contributing guide doc
+- [ ] Update README
 
 # MILESTONE №1 (May 21, 2020 - May 31, 2020)
 

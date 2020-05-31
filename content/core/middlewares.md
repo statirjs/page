@@ -2,11 +2,11 @@
 
 #### Description
 
-**"Middlewares"** in @statirjs/core used to extend [**action**](/content/core/forms.md) and [**pipes**](/content/core/forms.md). Its mean that **middlewares** resolve situation when user need extra functionality after **action**/**pipes** was called but before **store** change state and [**listeners**](/content/core/store.md) will be called.
+**"Middlewares"** in @statirjs/core used to extend [**action**](/content/core/forms.md) and [**pipes**](/content/core/forms.md). Its mean that **middlewares** resolve situation when user need extra functionality after **action**/**pipes** was called but before **store** change state and [**listeners**](/content/core/store.md) will be called
 
 #### Declaration
 
-**Middleware** it is function that return function, that's all.
+**Middleware** it is function that return function, that's all
 
 ```js
 function testMiddleware(next: UpdateState): UpdateState {
@@ -18,13 +18,13 @@ function testMiddleware(next: UpdateState): UpdateState {
 
 #### Cases
 
-For example we have inited **store** with few **forms** and we want logging state changes. We can subscribe to **store** but this not give us any extra information about **forms**, **actions** and **pipes** that fire changes. For this cases **middlewares** exist.
+For example we have inited **store** with few **forms** and we want logging state changes. We can subscribe to **store** but this not give us any extra information about **forms**, **actions** and **pipes** that fire changes. For this cases **middlewares** exist
 
 ```js
 const isLoggable = console && console.table;
 
 function logUpdate(update: Update) {
-  console.table(update);
+  isLoggable && console.table(update);
 }
 
 function testMiddleware(next: UpdateState): UpdateState {
@@ -37,7 +37,7 @@ function testMiddleware(next: UpdateState): UpdateState {
 
 #### Requirements
 
-1. **Middleware** must be provided to **store** config
+1. **middleware** must be provided to **store** config
 
 ```js
 const counter = createForme(
@@ -56,7 +56,7 @@ const counter = createForme(
   })
 );
 
-const store = initStpre({
+const store = initStpre({ 👍
   forms: {
     counter,
   },
@@ -64,21 +64,19 @@ const store = initStpre({
 });
 ```
 
-2. **Middleware** function must take **next** argument
+2. **middleware** function must take **next** argument
 
 ```js
-function exampleMiddleware(next: UpdateState) {
-  ...
-}
+function exampleMiddleware(next: UpdateState) { ... } 👍
 ```
 
-3. **Next** it is function that take **update** object
+3. **next** it is function that take **update** object
 
 ```js
 export type UpdateState = (update: Update) => void;
 ```
 
-4. **Update** it is plain js object that have all needed data to update store state
+4. **update** it is plain js object that have all needed data to update store state
 
 ```js
 store.dispatch.counter.increment();
@@ -95,22 +93,32 @@ let update: Update = {
 };
 ```
 
-5. **Middleware** must return function with **next**-like signature
+5. **middleware** must return function with **next**-like signature
 
 ```js
-function exampleMiddleware(next: UpdateState): UpdateState {
-  return function(update: Update) {
-    ...
-  }
+function exampleMiddleware(next: UpdateState): UpdateState { 👍
+  return function(update: Update) { ... }
 }
 ```
 
-6. **Middleware** result function must call **next** in body
+6. **middleware** result function must call **next** in body
 
 ```js
-function exampleMiddleware(next: UpdateState): UpdateState {
+function exampleMiddleware(next: UpdateState): UpdateState { 👍
   return function (update: Update) {
     next(update);
+  };
+}
+
+function exampleMiddleware(next: UpdateState): UpdateState { 👍
+  return function (update: Update) {
+    return next(update);
+  };
+}
+
+function exampleMiddleware(next: UpdateState): UpdateState { 👎
+  return function (update: Update) {
+    console.log(next, update);
   };
 }
 ```
@@ -120,15 +128,11 @@ function exampleMiddleware(next: UpdateState): UpdateState {
 When **initStore** will be called then **middlewares** will be chained by closure
 
 ```js
-function logMiddleware(next: UpdateState): UpdateState {
-  ...
-}
+function logMiddleware(next: UpdateState): UpdateState { ... }
 
-function devMiddleware(next: UpdateState): UpdateState {
-  ...
-}
+function devMiddleware(next: UpdateState): UpdateState { ... }
 
-const store = initStpre({
+const store = initStore({
   ...
   middlewares: [logiddleware, devMiddleware]
 });
@@ -158,5 +162,5 @@ const update = {
   actionName: "increment",
 }
 
-devMiddleware(logiddleware(internalUpdateFunction))(update);
+devMiddleware(logMiddleware(internalUpdateFunction))(update);
 ```

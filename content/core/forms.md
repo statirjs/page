@@ -2,11 +2,11 @@
 
 #### Description
 
-**"Forme"** in @statirjs/core is a base unit for build independent pice of [**store**](/content/core/store.md). User must use **createForme** function to create object full of needed actions and compatible with **store**.
+**"Forme"** in @statirjs/core is a base unit for build independent pice of [**store**](/content/core/store.md). User must use **createForme** function to create object full of needed actions and compatible with **store**
 
 #### Declaration
 
-**Forme** it's just factory function with two params.
+**Forme** it's just factory function with two parameters
 
 ```js
 import { createForme } from "@statirjs/core";
@@ -28,16 +28,16 @@ const counter = createForme(
 );
 ```
 
-> **_NOTE:_** If you use [**typescript**](https://www.typescriptlang.org/) then for more convenience in future (when you will be select data from [**store**](/content/core/store.md) and etc) you can pass state forme as typed object.
+> **_NOTE:_** If you use [**typescript**](https://www.typescriptlang.org/) then for more convenience in future (when you will be select data from [**store**](/content/core/store.md) and etc) you can pass state forme as typed object
 >
 > ```js
 > import { createForme } from "@statirjs/core";
 >
-> export interface ITestFormeState {
+> export interface ICounterState {
 >   count: number;
 > }
 >
-> const state: ITestFormeState = {
+> const state: ICounterState = {
 >   count: 0,
 > };
 >
@@ -70,13 +70,9 @@ const counter = createForme(counterState);
 2. not required function that return object with **actions** and **pipes** === **forme builder**
 
 ```js
-const counterBuilder = ( ... ) => ({
-    actions: {
-      ...
-    },
-    pipes: {
-      ...
-    }
+const counterBuilder = () => ({
+    actions: { ... },
+    pipes: { ... }
 })
 
 const counter = createForme(counterState, counterBuider);
@@ -84,22 +80,20 @@ const counter = createForme(counterState, counterBuider);
 
 #### Dispatch
 
-For connection **forms** between each other user can define [**dispatch**](/content/core/store.md) as first parameter in **forme builder** and then calls **pipes** and **actions** of others **formes**.
+For connection **forms** between each other user can define [**dispatch**](/content/core/store.md) as first parameter in **forme builder** and then calls **pipes** and **actions** of others **formes**
 
 ```js
 const counter = createForme(
   ... ,
   (dispatch: Dispatch) => ({
-    actions: {
-      ...
-    },
+    actions: { ... },
   })
 );
 ```
 
 #### Actions
 
-**Actions** it is strictly synchronous js functions for store state update.
+**Actions** it is strictly synchronous js functions for store state update
 
 1. **actions** and **pipes** it is not required property
 
@@ -148,7 +142,7 @@ const counterBuilder = () => ({ 👎
 });
 ```
 
-5. **action** receive two argument: current **forme state** and payload
+5. **action** receive two arguments: current **forme state** and payload
 
 ```js
 const counterBuilder = () => ({ 👍
@@ -175,130 +169,222 @@ const counterBuilder = () => ({ 👍
 
 #### Pipes
 
-**Pipes** in **forme** used to describe asynchronous actions divided into specific steps. All **pipe's** will catch error in **core** (and **done**) step where user can do (as suggested in @statirjs/core design) some async work. User can write asynchronous actions with native js async/await or Promise functionality.
+**Pipes** in **forme** used to describe asynchronous actions divided into specific steps. All **pipe's** catch an errors in **core** (and **done**) step where user can do (as suggested in **@statirjs/core** design) some asynchron work. User can write asynchronous **pipes** with native js async/await or Promise functionality
 
-1. **pipe** in **pipes** must be an plain object
-
-2. **pipe** divided in four steps: **push**, **core**, **done**, **error**
-
-3. all steps may be sync or async, but pipe in [**dispatch**](/content/core/store.md) anyway will be async
-
-4. **pipe** steps order: **push**, **core**, if runtime error throw then **fail** otherwise **done**
-
-![pipe](https://raw.githubusercontent.com/statirjs/page/master/content/core/images/pipe.png)
-
-5. **push** step have **action** signature
+1. **pipe** in **pipes** must be a plain object
 
 ```js
-const pipes = {
-  testPipe: {
-    push(state, payload: number) {
-      console.log(payload); // 1
-
-      return {
-        ...state,
-        count: state.count + payload,
-      };
-    },
+const counterBuilder = () => ({ 👍
+  pipes: {
+    incrementAsync: { ... }
   },
-};
+});
 ```
 
-6. **core** step have arguments as **action**, but can return any data
-
-7. pipe send **core** step return data to **done** as third argument
+2. **pipe** divided in four steps: **push**, **core**, **done**, **fail**
 
 ```js
-const pipes = {
-  testPipe: {
-    push(state, payload: number) {
-      console.log(payload); // 1
-
-      return {
-        ...state,
-        count: state.count + payload,
-      };
-    },
-    core(state, payload: number) {
-      console.log(payload); // 1
-
-      return {
-        data: [1, 2, 3],
-      };
-    },
+const counterBuilder = () => ({ 👍
+  pipes: {
+    incrementAsync: {
+      push() { ... },
+      core() { ... },
+      done() { ... },
+      fail() { ... },
+    }
   },
-};
+});
 ```
 
-8. **done** step have **action** signature and third argument as data that pipe get from **core** step
+3. only **push** step in **pipe** is required
 
 ```js
-const pipes = {
-  testPipe: {
-    push(state, payload: number) {
-      console.log(payload); // 1
-
-      return {
-        ...state,
-        count: state.count + payload,
-      };
-    },
-    async core(state, payload: number) {
-      console.log(payload); // 1
-
-      await delay(500);
-
-      return {
-        data: [1, 2, 3],
-      };
-    },
-    done(state, payload: number, data: number[]) {
-      console.log(payload); // 1
-      console.log(data); // [1, 2, 3]
-
-      return state;
-    },
+const counterBuilder = () => ({ 👍
+  pipes: {
+    incrementAsync: {
+      push() { ... },
+    }
   },
-};
+});
+
+const counterBuilder = () => ({ 👎
+  pipes: {
+    incrementAsync: {
+      done() { ... },
+    }
+  },
+});
 ```
 
-9. **fail** step have **action** signature and third argument as error object that was thrown
+4. all steps may be sync or async, but pipe in [**dispatch**](/content/core/store.md) anyway will be async
 
 ```js
-const pipes = {
-  testPipe: {
-    async push(state, payload: number) {
-      console.log(payload); // 1
-
-      await delay(500);
-
-      return {
-        ...state,
-        count: state.count + payload,
-      };
-    },
-    core(state, payload: number) {
-      console.log(payload); // 1
-
-      throw new Error("Test error");
-    },
-    error(state, payload: number, error: Error) {
-      console.log(payload); // 1
-      console.log(error); // Error('Test error')
-
-      return state;
-    },
+const counterBuilder = () => ({ 👍
+  pipes: {
+    incrementFalsyAsync: {
+      push() { ... },
+      core() { ... },
+      done() { ... },
+      fail() { ... },
+    }
   },
-};
+});
+
+store.dispatch.counter.incrementFalsyAsync() // () => Promise<void>
+
+const counterBuilder = () => ({ 👍
+  pipes: {
+    incrementTrulyAsync: {
+      async push() { ... },
+      async core() { ... },
+      async done() { ... },
+      async fail() { ... },
+    }
+  },
+});
+
+store.dispatch.counter.incrementTrulyAsync() // () => Promise<void>
 ```
 
-10. as you see above payload is same value for all steps
+5. **pipe** steps order: first **push**, second **core**, if runtime error throw in **core** then **fail** otherwise **done**
 
-11. only **push** step in **pipe** is required
+```js
+const counterBuilder = () => ({ 👍
+  pipes: {
+    incrementAsync: {
+      push() { ... },
+      core() {
+        return 'Example data!';
+      },
+      done() { ... },
+      fail() { ... },
+    }
+  },
+});
 
-#### Return value
+// Exacution order
+// 'push'
+// 'core'
+// 'done'
 
-**createForme** function parse arguments into compatible with [**store**](/content/core/store.md) object.
+const counterBuilder = () => ({ 👍
+  pipes: {
+    incrementAsync: {
+      push() { ... },
+      core() {
+        throw new Error('Example error!');
+      },
+      done() { ... },
+      fail() { ... },
+    }
+  },
+});
+
+// Exacution order
+// 'push'
+// 'core'
+// 'fail'
+```
+
+6. **push** receive two arguments: current **forme state** and payload. **Push** must return next **forme state** object for **forme**
+
+```js
+const counterBuilder = () => ({ 👍
+  pipes: {
+    addAsync: {
+      push(state: payload: number) {
+        return {
+          ...state,
+          count: state.count + payload
+        }
+      },
+    }
+  },
+});
+```
+
+7. **core** receive two arguments: current **forme state** and payload. **Core** may return any data
+
+```js
+const counterBuilder = () => ({ 👍
+  pipes: {
+    addAsync: {
+      push(state, payload: number) { ... },
+      core(state, payload: number) {
+        return 'Example data!';
+      }
+    }
+  },
+});
+
+const counterBuilder = () => ({ 👍
+  pipes: {
+    addAsync: {
+      push(state, payload: number) { ... },
+      core(state, payload: number) {
+        return null;
+      }
+    }
+  },
+});
+```
+
+8. **done** receive three arguments: current **forme state**, payload, and third argument as data that **pipe** get from **core** step. **Done** must return next **forme state** object for **forme**
+
+```js
+const counterBuilder = () => ({ 👍
+  pipes: {
+    addAsync: {
+      push(state, payload: number) { ... },
+      core(state, payload: number) {
+        return 'Example data!';
+      },
+      done(state, payload: number, data: string) {
+        return state;
+      }
+    }
+  },
+});
+```
+
+9. **fail** receive three arguments: current **forme state**, payload, and third argument as error that **pipe** get from **core** step. **Fail** must return next **forme state** object for **forme**
+
+```js
+const counterBuilder = () => ({ 👍
+  pipes: {
+    addAsync: {
+      push(state, payload: number) { ... },
+      core(state, payload: number) {
+        throw new Error('Example error!');
+      },
+      fail(state, payload: number, error: Error) {
+        return state;
+      }
+    }
+  },
+});
+```
+
+10. as you see above, payload it is same value for all steps
+
+```js
+const counterBuilder = () => ({ 👍
+  pipes: {
+    addAsync: {
+      push(state, payload: number) { ... }, // payload = 1
+      core(state, payload: number) { ... }, // payload = 1
+      done(state, payload: number, data: any) { ... } // payload = 1
+      fail(state, payload: number, error: Error) { ... } // payload = 1
+    }
+  },
+});
+
+store.dispatch.counter.addAsync(1)
+```
+
+#### Underhood
+
+**createForme** function parse arguments into object compatible with **store**
 
 ```js
 export interface ReFormeBuilder<
@@ -315,4 +401,4 @@ export interface ReFormeBuilder<
 }
 ```
 
-If you want somehow enhance creation of **forms** or reshape default **forme** (add beside **actions** and **pipes** some selectors for example), then you must use [**plugins**](/content/core/plugins.md).
+If you want somehow enhance creation of **forms** or reshape default **forme** (add beside **actions** and **pipes** some selectors for example), then you must use [**plugins**](/content/core/plugins.md)

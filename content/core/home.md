@@ -24,7 +24,7 @@ Repo: https://github.com/statirjs/core
 - [**Quick start**](/content/core/quick_start.md)
 - [**Forms**](/content/core/forms.md)
 - [**Store**](/content/core/store.md)
-- [**Middleware**](/content/core/middlewares.md)
+- [**Middlewares**](/content/core/middlewares.md)
 - [**Upgrades**](/content/core/upgrades.md)
 - [**Contributing guide**](/content/core/contributing_guide.md)
 

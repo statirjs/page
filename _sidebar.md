@@ -6,3 +6,5 @@
 - - [Middlewares](content/core/middlewares.md)
 - - [Upgrades](content/core/upgrades.md)
 - - [Contributing guide](/content/core/contributing_guide.md)
+- [**@statirjs/react**](/content/react/home.md)
+- [**@statirjs/page**](/content/page/home.md)

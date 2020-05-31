@@ -8,7 +8,7 @@
 npm i @statirjs/core
 ```
 
-2. create a **forme**
+2. create a [**forme**](/content/core/forms.md)
 
 ```js
 import { createForme } from "@statirjs/core";
@@ -42,22 +42,14 @@ const store = initStore({
 });
 ```
 
-> **NOTE:** for [**typescript**](https://www.typescriptlang.org/) it is possible extra preparation
->
-> ```js
-> type IStore = typeof store;
-> type IState = typeof store.state;
-> type IDispatch = typeof store.dispatch;
-> ```
-
 4. subscribe to **store** state changes
 
 ```js
-function listner(state: IState) {
+function listener(state: IState) {
   console.log(state);
 }
 
-store.subscribe(listner);
+store.subscribe(listener);
 ```
 
 5. now you can [**dispatch**](/content/core/store.md) actions and see how [**listeners**](/content/core/store.md) will be calls

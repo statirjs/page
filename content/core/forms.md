@@ -2,11 +2,11 @@
 
 #### Description
 
-**"Forme"** in **@statirjs/core** is a base unit for build independent pice of [**store**](/content/core/store.md). User must use **createForme** function to create object full of needed actions and compatible with **store**
+**"Forme"** in **@statirjs/core** is a base unit for build independent pice of [**store**](/content/core/store.md)
 
 #### Declaration
 
-**Forme** it's just factory function with two parameters
+**Forme** is created by factory function **createForme** with two parameters
 
 ```js
 import { createForme } from "@statirjs/core";
@@ -31,9 +31,7 @@ const counter = createForme(
 > **NOTE:** If you use [**typescript**](https://www.typescriptlang.org/) then for more convenience in future (when you will be select data from [**store**](/content/core/store.md) and etc) you can pass state forme as typed object
 >
 > ```js
-> import { createForme } from "@statirjs/core";
->
-> export interface ICounterState {
+> interface ICounterState {
 >   count: number;
 > }
 >
@@ -53,7 +51,7 @@ const counter = createForme(
 > }));
 > ```
 
-#### Arguments requirements
+#### Arguments
 
 **createForme** function receive two arguments:
 
@@ -387,7 +385,7 @@ store.dispatch.counter.addAsync(1)
 **createForme** function parse arguments into object compatible with **store**
 
 ```js
-export interface ReFormeBuilder<
+interface ReFormeBuilder<
   T extends State = State,
   K extends Forme<T> = Forme
 > {

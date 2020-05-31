@@ -57,7 +57,7 @@ function exampleUpgrade(next: CreateStore) { ... } 👍
 2. **next** it is function that take **config** object
 
 ```js
-export type CreateStore = (config: Config) => Store; 👍
+type CreateStore = (config: Config) => Store; 👍
 ```
 
 3. **config** it is init **store** config object

@@ -48,7 +48,7 @@ function exampleMiddleware(next: UpdateState) { ... } 👍
 2. **next** it is function that take **update** object
 
 ```js
-export type UpdateState = (update: Update) => void; 👍
+type UpdateState = (update: Update) => void; 👍
 ```
 
 3. **update** it is plain js object that have all needed data to update store state

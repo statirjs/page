@@ -1,12 +1,14 @@
 # Quick start
 
+#### Common case
+
 1. install **@statirjs/core**
 
 ```shell
 npm i @statirjs/core
 ```
 
-2. create a [**forme**](/content/core/forms.md)
+2. create a **forme**
 
 ```js
 import { createForme } from "@statirjs/core";
@@ -48,7 +50,7 @@ const store = initStore({
 > type IDispatch = typeof store.dispatch;
 > ```
 
-1. subscribe to **store** state changes
+4. subscribe to **store** state changes
 
 ```js
 function listner(state: IState) {
@@ -63,3 +65,47 @@ store.subscribe(listner);
 ```js
 store.dispatch.counter.increment();
 ```
+
+#### Enhanced case
+
+1. install **@statirjs/core**
+
+2. create a **forme**
+
+3. create a [**middleware**](/content/core/middlewares.md)
+
+```js
+function exampleMiddleware(next: UpdateState): UpdateState {
+  return function (update: Update) {
+    next(update);
+  };
+}
+```
+
+4. create [**upgrade**](/content/core/upgrades.md)
+
+```js
+function exampleUpgrade(next: CreateStore): CreateStore {
+  return function (config: Config) {
+    return next(config);
+  };
+}
+```
+
+5. initiate a **store**
+
+```js
+import { initStore } from "@statirjs/core";
+
+const store = initStore({
+  forms: {
+    counter,
+  },
+  middlewares: [exampleMiddleware],
+  upgrades: [exampleUpgrade],
+});
+```
+
+6. subscribe to **store** state changes
+
+7. now you can **dispatch** actions and see how **listeners** will be calls

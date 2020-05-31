@@ -9,7 +9,7 @@
 **Middleware** it is function that return function, that's all
 
 ```js
-function testMiddleware(next: UpdateState): UpdateState {
+function exampleMiddleware(next: UpdateState): UpdateState {
   return function (update: Update) {
     next(update);
   };
@@ -27,7 +27,7 @@ function logUpdate(update: Update) {
   isLoggable && console.table(update);
 }
 
-function testMiddleware(next: UpdateState): UpdateState {
+function exampleMiddleware(next: UpdateState): UpdateState {
   return function (update: Update) {
     logUpdate(update);
     next(update);

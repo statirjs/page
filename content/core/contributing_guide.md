@@ -58,6 +58,8 @@ npm run scripts:types
 
 3. place types to ./src/typing/internal.ts
 
+4. use functions declarations over arrows functions
+
 #### Size check
 
 1. use [**size-limit**](https://github.com/ai/size-limit) for size check

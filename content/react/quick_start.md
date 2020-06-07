@@ -24,7 +24,7 @@ import { store } from "./store";
 export function App() {
   return (
     <Provider store={store}>
-      <CounteDisplay> // Your consumers components
+      <Counter> // Your consumers components
     </Provider>
   );
 }
@@ -33,21 +33,25 @@ export function App() {
 4. import and use hooks
 
 ```js
-import { useSelector, useDispath } from '@statirjs/react';
+import { useSelector, useDispath } from "@statirjs/react";
 
-export function CounteDisplay() {
+export function Counter() {
   const count = useSelector((rootState) => rootState.counter.count);
 
   const increment = useDispath((dispatch) => dispatch.counter.increment);
 
-  return ( ... );
+  return (
+    <div>
+      <h1>{count}</h1>
+      <button onClick={increment}>Increment me</button>
+    </div>
+  );
 }
 ```
 
 > **NOTE:** for [**typescript**](https://www.typescriptlang.org/) it is possible to re-declare hooks with your own types
 >
 > ```js
-> type IStore = typeof store;
 > type IState = typeof store.state;
 > type IDispatch = typeof store.dispatch;
 >

@@ -4,9 +4,9 @@
 - [ ] Add page contributing guide doc
 - [ ] Update README
 - [x] Add react quick start doc
-- [ ] Add react provider doc
-- [ ] Add react useSelector doc
-- [ ] Add react useDispatch home
+- [x] Add react provider doc
+- [x] Add react useSelector doc
+- [x] Add react useDispatch home
 - [x] Add react contributing guide doc
 
 # MILESTONE №1 (May 21, 2020 - May 31, 2020)

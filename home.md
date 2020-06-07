@@ -8,9 +8,9 @@
 
 2. [**react**](/content/react/home.md) project - [**react**](https://reactjs.org/) connector to **@statirjs/core**
 
-3. [**page**](/content/page/home.md) project - documentation knowledge center for users
+3. [**page**](/content/page/home.md) project - documentation knowledge center
 
-**Statirjs** not depend on any platforms and frameworks. It is tiny (core ~ [**2.2 KB**](https://bundlephobia.com/result?p=@statirjs/core@0.4.0)) and not have external dependencies
+**Statirjs** not depend on any platforms and frameworks. It is tiny (core ~ [**2.2 KB**](https://bundlephobia.com/result?p=@statirjs/core)) and not have external dependencies
 
 #### Index
 

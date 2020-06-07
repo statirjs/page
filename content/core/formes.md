@@ -1,4 +1,4 @@
-# Forms
+# Formes
 
 #### Description
 
@@ -78,7 +78,7 @@ const counter = createForme(counterState, counterBuider);
 
 #### Dispatch
 
-For connection **forms** between each other user can define [**dispatch**](/content/core/store.md) as first parameter in **forme builder** and then calls **pipes** and **actions** of others **formes**
+For connection **formes** between each other user can define [**dispatch**](/content/core/store.md) as first parameter in **forme builder** and then calls **pipes** and **actions** of others **formes**
 
 ```js
 const counter = createForme(

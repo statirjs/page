@@ -28,7 +28,7 @@ const counter = createForme(
 );
 
 const store = initStore({
-  forms: {
+  formes: {
     counter,
   },
 });
@@ -50,17 +50,17 @@ const store = initStore({
 const store = initStore({ ... });
 ```
 
-2. config include required [**forms**](/content/core/forms.md) property. **Forms** it is dictionary of **createForme** result objects
+2. config include required [**formes**](/content/core/formes.md) property. **Formes** it is dictionary of **createForme** result objects
 
 ```js
 const store = initStore({ 👍
-  forms: {
+  formes: {
     counter,
   },
 });
 
 const store = initStore({ 👍
-  forms: {
+  formes: {
     "incrementor": counter,
   },
 });
@@ -96,7 +96,7 @@ const store = initStore({ 👍
 
 #### State
 
-User can get actual **store** state. All **forms** states divided by name as specified in config
+User can get actual **store** state. All **formes** states divided by name as specified in config
 
 ```js
 const stateCount = store.state.counter.count;
@@ -104,13 +104,13 @@ const stateCount = store.state.counter.count;
 
 #### Dispatch
 
-User can use **actions** and **pipes** by **dispatch**. All **forms** activity divided by name as specified in config
+User can use **actions** and **pipes** by **dispatch**. All **formes** activity divided by name as specified in config
 
 ```js
 store.dispatch.counter.increment();
 ```
 
-Also it is possible provide **dispatch** to **forme builder** and use external **forms** **actions** and **pipes** in any other **forms** **pipes**
+Also it is possible provide **dispatch** to **forme builder** and use external **formes** **actions** and **pipes** in any other **formes** **pipes**
 
 ```js
 const anotherForme = createForme(

@@ -2,7 +2,7 @@
 
 #### Description
 
-**"Middlewares"** in **@statirjs/core** used to extend [**action**](/content/core/forms.md) and [**pipes**](/content/core/forms.md). It is mean that **middlewares** resolve situation when user need extra functionality after **action**/**pipes** was called but before **store** change state and [**listeners**](/content/core/store.md) will be called
+**"Middlewares"** in **@statirjs/core** used to extend [**action**](/content/core/formes.md) and [**pipes**](/content/core/formes.md). It is mean that **middlewares** resolve situation when user need extra functionality after **action**/**pipes** was called but before **store** change state and [**listeners**](/content/core/store.md) will be called
 
 #### Declaration
 
@@ -18,7 +18,7 @@ function exampleMiddleware(next: UpdateState): UpdateState {
 
 #### Cases
 
-For example we have inited **store** with few **forms** and we want logging state changes. We can subscribe to **store** but this not give us any extra information about **forms**, **actions** and **pipes** that fire changes. For this cases **middlewares** exist
+For example we have inited **store** with few **formes** and we want logging state changes. We can subscribe to **store** but this not give us any extra information about **formes**, **actions** and **pipes** that fire changes. For this cases **middlewares** exist
 
 ```js
 const isLoggable = console && console.table;
@@ -88,7 +88,7 @@ const counter = createForme(
 );
 
 const store = initStore({ 👍
-  forms: {
+  formes: {
     counter,
   },
   middlewares: [ ... ] // <- Here place middlewares

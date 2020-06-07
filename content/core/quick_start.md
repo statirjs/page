@@ -8,7 +8,7 @@
 npm i @statirjs/core
 ```
 
-2. create a [**forme**](/content/core/forms.md)
+2. create a [**forme**](/content/core/formes.md)
 
 ```js
 import { createForme } from "@statirjs/core";
@@ -36,7 +36,7 @@ const counter = createForme(
 import { initStore } from "@statirjs/core";
 
 const store = initStore({
-  forms: {
+  formes: {
     counter,
   },
 });
@@ -90,7 +90,7 @@ function exampleUpgrade(next: CreateStore): CreateStore {
 import { initStore } from "@statirjs/core";
 
 const store = initStore({
-  forms: {
+  formes: {
     counter,
   },
   middlewares: [exampleMiddleware],

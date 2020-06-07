@@ -17,7 +17,7 @@
 - [**Home**](/home.md)
 - [**@statirjs/core**](/content/core/home.md)
   - [**Quick start**](/content/core/quick_start.md)
-  - [**Forms**](/content/core/forms.md)
+  - [**Formes**](/content/core/formes.md)
   - [**Store**](/content/core/store.md)
   - [**Middlewares**](/content/core/middlewares.md)
   - [**Upgrades**](/content/core/upgrades.md)

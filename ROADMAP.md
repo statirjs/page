@@ -23,7 +23,7 @@
 - [x] Pr template
 - [x] Issue template
 - [x] Add core quick start doc
-- [x] Add core forms doc
+- [x] Add core formes doc
 - [x] Add core store doc
 - [x] Add core home
 - [x] Add core middlewares doc

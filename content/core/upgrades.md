@@ -64,7 +64,7 @@ type CreateStore = (config: Config) => Store; 👍
 
 ```js
 const config: Config = {
-  forms: {}, // forms object
+  formes: {}, // formes object
   upgrades: [], // array of upgrades
   middlewares: [], // array of middlewares
 };
@@ -92,7 +92,7 @@ const counter = createForme(
 );
 
 const store = initStore({ 👍
-  forms: {
+  formes: {
     counter
   },
   upgrades: [ ... ] // <- Here place upgrades
@@ -150,7 +150,7 @@ function persistUpgrade(next: CreateStore): CreateStore { ... }
 
 // Simplified @statirjs/core internal function
 function createStore(config: Config): Store {
-  const { state, dispatch } = createBlankStore(config.forms);
+  const { state, dispatch } = createBlankStore(config.formes);
   updateDispatch(dispatch, config.middlewares);
   return {
     state,
@@ -159,7 +159,7 @@ function createStore(config: Config): Store {
 }
 
 const config = {
-  forms: {
+  formes: {
     counter
   },
   upgrades: [devtoolUpgrade, persistUpgrade]

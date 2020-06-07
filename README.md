@@ -12,6 +12,10 @@
 
 [**HOMEPAGE**](https://statirjs.github.io/page/#/content/page/home)
 
+## Docs index
+
+- [**Contributing guide**](https://statirjs.github.io/page/#/content/page/contributing_guide)
+
 ## Discord
 
 Community [**DISCORD**](https://discord.gg/mypB55)

@@ -8,6 +8,8 @@
 
 **"@statirjs/react"** it is **@statirjs/core** connector to [**react**](https://reactjs.org/) components by context
 
+Repo: https://github.com/statirjs/react
+
 #### Index
 
 - [**Quick start**](/content/react/quick_start.md)
@@ -16,18 +18,18 @@
 - [**useSelector**](/content/react/use_selector.md)
 - [**Contributing guide**](/content/react/contributing_guide.md)
 
-## Discord
+#### Discord
 
 Community [**DISCORD**](https://discord.gg/mypB55)
 
-## Roadmap
+#### Roadmap
 
 [**ROADMAP**](https://github.com/statirjs/react/blob/dev/ROADMAP.md)
 
-## Authors
+#### Authors
 
 [**AUTHORS**](https://github.com/statirjs/react/blob/dev/AUTHORS.md)
 
-## License
+#### License
 
 [**MIT**](https://github.com/statirjs/react/blob/dev/LICENSE.md)

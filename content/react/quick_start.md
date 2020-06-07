@@ -9,9 +9,29 @@ npm i @statirjs/core @statirjs/react
 2. init [**store**](/content/core/store.md)
 
 ```js
-import { initStore } from "@statirjs/core";
+import { initStore, createForme } from "@statirjs/core";
 
-export const store = initStore( ... )
+const counter = createForme(
+  {
+    count: 0,
+  },
+  () => ({
+    actions: {
+      increment(state) {
+        return {
+          ...state,
+          count: state.count + 1,
+        };
+      },
+    },
+  })
+);
+
+const store = initStore({
+  forms: {
+    counter,
+  },
+});
 ```
 
 3. wrap potential consumers by [**provider**](/content/react/provider.md)

@@ -1,8 +1,13 @@
-# MILESTONE №1 (May 31, 2020 - today)
+# MILESTONE №3 (June 7, 2020 - today)
 
-- [ ] Add page home doc
-- [ ] Add page contributing guide doc
-- [ ] Update README
+- [ ] Fix grammar errors
+- [ ] Extend home page
+
+# MILESTONE №2 (May 31, 2020 - June 7, 2020)
+
+- [x] Add page home doc
+- [x] Add page contributing guide doc
+- [x] Update README
 - [x] Add react quick start doc
 - [x] Add react provider doc
 - [x] Add react useSelector doc

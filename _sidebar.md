@@ -13,3 +13,4 @@
   - [useSelector](/content/react/use_selector.md)
   - [Contributing guide](/content/react/contributing_guide.md)
 - [**@statirjs/page**](/content/page/home.md)
+  - [Contributing guide](/content/page/contributing_guide.md)

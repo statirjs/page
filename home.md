@@ -2,6 +2,32 @@
 
 ---
 
+# Why statirjs?
+
+<h3>📦 Small size of projects packages:</h3>
+
+- <span style="color:grey; font-weight:bold">core ~ 2.2 KB</span>
+
+- <span style="color:grey; font-weight:bold">react ~ 1 KB</span>
+
+- <span style="color:grey; font-weight:bold">persist ~ 2.2 KB</span>
+
+<h3>⚙ State and actions splitted by simple independent pisces</h3>
+
+<h3>💪 Flexible extensions mechanisms</h3>
+
+<h3>🤟 Minimal of boilerplates</h3>
+
+<h3>🔬 Build-in redux-devtool</h3>
+
+<h3>🌎 Core project work on all js platforms/frameworks</h3>
+
+<h3>📖 Well documented</h3>
+
+<h3>🛡️ Written on Typescript</h3>
+
+---
+
 **Statirjs** it is group of related projects. They exist to present well documented, flexible state manager for JavaScript apps. This projects include:
 
 1. [**core**](/content/core/home.md) project - heart of entire **statirjs**, it contain all basic state manager functionality
@@ -11,8 +37,6 @@
 3. [**page**](/content/page/home.md) project - documentation knowledge center
 
 4. [**persist**](/content/persist/home.md) project - [**upgrade**](/content/persist/upgrade.md) for saving state in **storage**
-
-**Statirjs** not depend on any platforms and frameworks. It is tiny (core ~ [**2.2 KB**](https://bundlephobia.com/result?p=@statirjs/core)) and not have external dependencies
 
 #### Index
 

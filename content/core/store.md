@@ -110,6 +110,23 @@ User can use **actions** and **pipes** by **dispatch**. All **formes** activity 
 store.dispatch.counter.increment();
 ```
 
+> **NOTE:** user can use **actions** and **pipes** with async/await as default js functions
+>
+> ```js
+> console.log("Before pipe");
+> await store.dispatch.someForme.somePipe();
+> console.log("After pipe");
+> console.log("Before action");
+> store.dispatch.counter.increment();
+> console.log("After action");
+>
+> // Console log:
+> // Before pipe
+> // After pipe
+> // Before action
+> // After action
+> ```
+
 Also it is possible provide **dispatch** to **forme builder** and use external **formes** **actions** and **pipes** in any other **formes** **pipes**
 
 ```js

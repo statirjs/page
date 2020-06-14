@@ -10,15 +10,6 @@
 
 Repo: https://github.com/statirjs/core
 
-#### Advantages
-
-- minimal lines of boilerplates
-- **store** functionality splitted in simple and atomic units called **formes**
-- flexible **upgrades**/**middlewares** mechanism
-- built-in [**redux-devtool**](https://github.com/reduxjs/redux-devtools)
-- small size ([**~2.2 KB**](https://bundlephobia.com/result?p=@statirjs/core))
-- working on all js platforms/frameworks
-
 #### Index
 
 - [**Quick start**](/content/core/quick_start.md)

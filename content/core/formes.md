@@ -2,7 +2,7 @@
 
 #### Description
 
-**"Forme"** in **@statirjs/core** is a base unit for build independent pice of [**store**](/content/core/store.md)
+**"Forme"** in **@statirjs/core** is a base unit for build independent piece of [**store**](/content/core/store.md). All **forme** activity functions grouped by two types: **actions** and **pipes**. **Pipes** designed to present divided on steps asynchronius function
 
 #### Declaration
 

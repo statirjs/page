@@ -2,7 +2,7 @@
 
 [![Discord](https://img.shields.io/discord/713451221901508720?label=discord)](https://discord.gg/mypB55)
 
-**"@statirjs/page"** is a main **statirjs** github page created with [**docsify**](https://docsify.js.org/#/) it is contain all docs related with entitre **statirjs** project
+**"@statirjs/page"** is a main **statirjs** github page created with [**docsify**](https://docsify.js.org/#/) it contains all docs related to **statirjs**
 
 ## Project documentation
 

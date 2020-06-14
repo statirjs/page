@@ -2,7 +2,7 @@
 
 #### Description
 
-**"useSelect"** in **@statirjs/react** it is a [**react**](https://reactjs.org/) hook that consume [**store**](/content/core/store.md) inside with **useContext**
+**"useSelect"** in **@statirjs/react** is a [**react**](https://reactjs.org/) hook that consumes [**store**](/content/core/store.md) inside with **useContext**
 
 #### Cases
 
@@ -18,7 +18,7 @@ export function CounterDisplay() {
 
 #### Arguments
 
-1. hook require selector function that select state data from **store**
+1. hook requires selector function that selects state data from **store**
 
 ```js
 function selector(rootState) {

@@ -2,7 +2,7 @@
 
 #### Description
 
-**"Store"** in **@statirjs/core** it is main js object included **dispatch**, **subscribe** and state getter functionality
+**"Store"** in **@statirjs/core** is main js object including **dispatch**, **subscribe** and state data
 
 #### Declaration
 
@@ -34,7 +34,7 @@ const store = initStore({
 });
 ```
 
-> **NOTE:** for [**typescript**](https://www.typescriptlang.org/) it is possible to declare **store** elements type for better typing
+> **NOTE:** for [**typescript**](https://www.typescriptlang.org/) it is possible to declare **store** element type for better typing
 >
 > ```js
 > type IStore = typeof store;
@@ -44,13 +44,13 @@ const store = initStore({
 
 #### Arguments
 
-1. **store** require config object
+1. **store** requires config object
 
 ```js
 const store = initStore({ ... });
 ```
 
-2. config include required [**formes**](/content/core/formes.md) property. **Formes** it is dictionary of **createForme** result objects
+2. config includes required [**formes**](/content/core/formes.md) property. **Formes** are dictionary of **createForme** result objects
 
 ```js
 const store = initStore({ 👍
@@ -66,7 +66,7 @@ const store = initStore({ 👍
 });
 ```
 
-3. config also have optional [**middlewares**](/content/core/middlewares.md) property. **Middlewares** must be an array
+3. config also has optional [**middlewares**](/content/core/middlewares.md) property. **Middlewares** must be an array
 
 ```js
 const store = initStore({ 👍
@@ -80,7 +80,7 @@ const store = initStore({ 👍
 });
 ```
 
-4. config also have optional [**upgrades**](/content/core/upgrades.md) property. **Upgrades** must be an array
+4. config also has optional [**upgrades**](/content/core/upgrades.md) property. **Upgrades** must be an array
 
 ```js
 const store = initStore({ 👍
@@ -96,7 +96,7 @@ const store = initStore({ 👍
 
 #### State
 
-User can get actual **store** state. All **formes** states divided by name as specified in config
+User can get actual **store** state. All **formes** states are divided by name as specified in config
 
 ```js
 const stateCount = store.state.counter.count;
@@ -104,7 +104,7 @@ const stateCount = store.state.counter.count;
 
 #### Dispatch
 
-User can use **actions** and **pipes** by **dispatch**. All **formes** activity divided by name as specified in config
+User can use **actions** and **pipes** by **dispatch**. All **formes** activity are divided by name as specified in config
 
 ```js
 store.dispatch.counter.increment();
@@ -127,7 +127,7 @@ store.dispatch.counter.increment();
 > // After action
 > ```
 
-Also it is possible provide **dispatch** to **forme builder** and use external **formes** **actions** and **pipes** in any other **formes** **pipes**
+Also it is possible to provide **dispatch** to **forme builder** and use external **formes** **actions** and **pipes** in any other **formes** **pipes**
 
 ```js
 const anotherForme = createForme(
@@ -147,7 +147,7 @@ const anotherForme = createForme(
 
 #### Listeners
 
-For listen changes in store user must use **subscribe** functionality of **store**. **Listener** provided to store it is function that get root state object. **Listener** will calls each time when dispatch called
+For listen changes in **store** user must use **subscribe** functionality of **store**. **Listener** provided to store is a function that gets root state object. **Listener** will be called each time when dispatch called
 
 ```js
 type Listener = (rootState: RootState) => void;

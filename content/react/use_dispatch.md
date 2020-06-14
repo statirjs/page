@@ -2,7 +2,7 @@
 
 #### Description
 
-**"useDispatch"** in **@statirjs/react** it is a [**react**](https://reactjs.org/) hook that consume [**store**](/content/core/store.md) inside with **useContext**
+**"useDispatch"** in **@statirjs/react** is a [**react**](https://reactjs.org/) hook that consumes [**store**](/content/core/store.md) inside with **useContext**
 
 #### Cases
 
@@ -18,7 +18,7 @@ export function CounterButton() {
 
 #### Arguments
 
-1. hook require selector function that select action function from **dispatch**
+1. hook requires selector function that selects action function from **dispatch**
 
 ```js
 function selector(dispatch) {

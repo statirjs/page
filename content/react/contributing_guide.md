@@ -28,7 +28,7 @@ npm run rollup:build
 
 9. send the [**pull request**](#sending-a-pull-request)
 
-> **NOTE:** in fact all this checks will be also executed on commit stage and pull request stage. Thanks to [**husky**](https://github.com/typicode/husky) and [**travis CI**](https://travis-ci.org/getting_started)
+> **NOTE:** in fact all these checks will be also executed on commit stage and pull request stage. Thanks to [**husky**](https://github.com/typicode/husky) and [**travis CI**](https://travis-ci.org/getting_started)
 
 #### Typescript
 
@@ -38,7 +38,7 @@ npm run rollup:build
 npm run typescript:check
 ```
 
-2. use **typescript** to generate types files
+2. use **typescript** to generate type files
 
 ```shell
 npm run typescript:types
@@ -58,7 +58,7 @@ npm run scripts:types
 
 3. place types to ./src/typing/internal.ts
 
-4. use functions declarations over arrows functions
+4. use function declarations over arrow functions
 
 #### Size check
 
@@ -98,11 +98,11 @@ npm run eslint:check
 
 #### Sending a pull request
 
-For new feature or bugs fix, please open an issue with a proposal (do not forget code refactoring, stylings and tests). Main steps to create pull request:
+For new feature or bug fix, please open an issue with a proposal (do not forget code refactoring, stylings and tests). Main steps to create pull request:
 
 1. fork the repo
 
-2. create a new feature branch based off the master branch
+2. create a new feature branch based off the dev branch
 
 3. make sure all tests pass and there are no linting errors
 

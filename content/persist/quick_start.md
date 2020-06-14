@@ -6,7 +6,7 @@
 npm i @statirjs/core @statirjs/react @statirjs/persist
 ```
 
-1. init [**forme**](/content/core/formes.md)
+2. init [**forme**](/content/core/formes.md)
 
 ```js
 import { createForme } from "@statirjs/core";
@@ -51,7 +51,7 @@ const store = initStore({
 });
 ```
 
-5. wrap your app in [**PersistGate**](/content/persist/persist_gate.md)
+5. wrap your components with [**PersistGate**](/content/persist/persist_gate.md)
 
 ```js
 import React from "react";
@@ -63,7 +63,7 @@ export function App() {
   return (
     <Provider store={store}>
       <PersistGate>
-        <Counter>
+        <Counter />
       </PersistGate>
     </Provider>
   );

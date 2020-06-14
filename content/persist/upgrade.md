@@ -2,7 +2,7 @@
 
 #### Description
 
-**"Persist upgrade"** in **@statirjs/persist** used to extend [**store**](/content/core/store.md) creation process. [**Upgrade**](/content/core/upgrades.md) will add [**listener**](/content/core/store.md) to **store** for saving data to storage and add **persist** [**forme**](/content/core/formes.md) with init [**pipe**](/content/core/formes.md)
+**"Persist upgrade"** in **@statirjs/persist** is used to extend [**store**](/content/core/store.md) creation process. [**Upgrade**](/content/core/upgrades.md) will add [**listener**](/content/core/store.md) to **store** for saving data to storage and add **persist** [**forme**](/content/core/formes.md)
 
 #### Declaration
 
@@ -18,7 +18,7 @@ const persistUpgrage = createPersistUpgrade({
 
 #### Arguments
 
-**Upgrade** function receive one argument - config:
+**Upgrade** function receives one argument - config:
 
 ```js
 const config: Config = {
@@ -31,9 +31,9 @@ const config: Config = {
 
 #### Common requirements
 
-1. **name** it is optional value (default = "STATIRJS_PERSIST")
+1. **name** is optional value (default = "STATIRJS_PERSIST")
 
-2. **storage** must satisfy subtype of **Storage** interface (Web Storage API it is subtype of **Storage**)
+2. **storage** must satisfy subtype of **Storage** interface (Web Storage API interface is subtype of **Storage**)
 
 ```js
 interface Storage {
@@ -43,7 +43,7 @@ interface Storage {
 }
 ```
 
-3. **whitelist** it is optional value (default = [ ]). must be array of **formes** names that will be saved to **storage**
+3. **whitelist** is optional value (default = [ ]). must be array of **formes** names that will be saved to **storage**
 
 ```js
 const config = {
@@ -90,7 +90,7 @@ const store = initStore({
 // }
 ```
 
-4. **blacklist** it is optional value (default = [ ]). must be array of **formes** names that will not be saved to **storage**
+4. **blacklist** is optional value (default = [ ]). must be array of **formes** names that will not be saved to **storage**
 
 ```js
 const config = {
@@ -136,7 +136,7 @@ const store = initStore({
 // }
 ```
 
-5. **whitelist** determinate **formes** keys before **blacklist**
+5. **whitelist** applies before **blacklist**
 
 ```js
 const config = {

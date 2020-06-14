@@ -2,7 +2,7 @@
 
 #### Description
 
-**"Provider"** in **@statirjs/react** it is a [**react**](https://reactjs.org/) component wrapper that work with **context**
+**"Provider"** in **@statirjs/react** is a [**react**](https://reactjs.org/) component wrapper that works with **context**
 
 #### Cases
 
@@ -22,7 +22,7 @@ export function App() {
 
 #### Common requirements
 
-1. **provider** component require [**store**](/content/core/store.md) object created by **initStore**
+1. **provider** component requires [**store**](/content/core/store.md) object created by **initStore**
 
 ```js
 <Provider store={store}>

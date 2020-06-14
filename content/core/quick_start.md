@@ -30,7 +30,7 @@ const counter = createForme(
 );
 ```
 
-3. initiate a [**store**](/content/core/store.md)
+3. init [**store**](/content/core/store.md)
 
 ```js
 import { initStore } from "@statirjs/core";
@@ -52,7 +52,7 @@ function listener(state: IState) {
 store.subscribe(listener);
 ```
 
-5. now you can [**dispatch**](/content/core/store.md) actions and see how [**listeners**](/content/core/store.md) will be calls
+5. now you can [**dispatch**](/content/core/store.md) actions and see how [**listeners**](/content/core/store.md) will be called
 
 ```js
 store.dispatch.counter.increment();
@@ -84,7 +84,7 @@ function exampleUpgrade(next: CreateStore): CreateStore {
 }
 ```
 
-5. initiate a **store**
+5. init **store**
 
 ```js
 import { initStore } from "@statirjs/core";
@@ -100,4 +100,4 @@ const store = initStore({
 
 6. subscribe to **store** state changes
 
-7. now you can **dispatch** actions and see how **listeners** will be calls
+7. now you can **dispatch** actions and see how **listeners** will be called

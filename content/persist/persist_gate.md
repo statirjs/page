@@ -2,7 +2,7 @@
 
 #### Description
 
-**"PersistGate"** in **@statirjs/persist** it is a [**react**](https://reactjs.org/) component wrapper that init **persist** [**frome**](/content/core/formes.md) init [**pipe**](/content/core/formes.md) to restore data from **storage**
+**"PersistGate"** in **@statirjs/persist** is a [**react**](https://reactjs.org/) component wrapper that inits **persist** [**pipe**](/content/core/formes.md) to restore data from **storage**
 
 #### Cases
 
@@ -16,7 +16,7 @@ export function App() {
   return (
     <Provider store={store}>
       <PersistGate>
-        <Counter>
+        <Counter />
       </PersistGate>
     </Provider>
   );

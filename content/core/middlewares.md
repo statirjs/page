@@ -2,11 +2,11 @@
 
 #### Description
 
-**"Middlewares"** in **@statirjs/core** used to extend [**action**](/content/core/formes.md) and [**pipes**](/content/core/formes.md). It is mean that **middlewares** resolve situation when user need extra functionality after **action**/**pipes** was called but before **store** change state and [**listeners**](/content/core/store.md) will be called
+**"Middlewares"** in **@statirjs/core** are used to extend [**action**](/content/core/formes.md) and [**pipes**](/content/core/formes.md). It means that **middlewares** resolve situation when user needs extra functionality after **action**/**pipes** were called but before **store** changes state and [**listeners**](/content/core/store.md) are called
 
 #### Declaration
 
-**Middleware** it is function that return function, that's all
+**Middleware** is a function that returns function, that's all
 
 ```js
 function exampleMiddleware(next: UpdateState): UpdateState {
@@ -18,7 +18,7 @@ function exampleMiddleware(next: UpdateState): UpdateState {
 
 #### Cases
 
-For example we have inited **store** with few **formes** and we want logging state changes. We can subscribe to **store** but this not give us any extra information about **formes**, **actions** and **pipes** that fire changes. For this cases **middlewares** exist
+For example we have inited **store** with few **formes** and we want to log state changes. We can subscribe to **store** but this provides us no extra information about **formes**, **actions** and **pipes** that were called. For this cases **middlewares** exists
 
 ```js
 const isLoggable = console && console.table;
@@ -37,7 +37,7 @@ function exampleMiddleware(next: UpdateState): UpdateState {
 
 #### Arguments
 
-**Middleware** function receive one argument:
+**Middleware** function receives one argument:
 
 1. **middleware** function must take **next** argument
 
@@ -45,24 +45,24 @@ function exampleMiddleware(next: UpdateState): UpdateState {
 function exampleMiddleware(next: UpdateState) { ... } 👍
 ```
 
-2. **next** it is function that take **update** object
+2. **next** is function that takes **update** object
 
 ```js
 type UpdateState = (update: Update) => void; 👍
 ```
 
-3. **update** it is plain js object that have all needed data to update store state
+3. **update** is plain js object that has all needed data to update store state
 
 ```js
 store.dispatch.counter.increment();
 
 const update: Update = {
-  state: { count: 1 }, // forme state returned after actions or pipes steps
+  state: { count: 1 }, // forme state is returned after actions or pipes steps
   rootState: {
     counter: { count: 0 }, // root state before updating
   },
   formeName: "counter", // name of forme called by dispatch
-  actionName: "increment", // name of pipes or actions called by dispatch,
+  actionName: "increment", // name of pipes or actions called by dispatch
   disable: false, // optional value (default = false). if true then rootState will not update and listeners will not calls
 };
 ```
@@ -104,7 +104,7 @@ function exampleMiddleware(next: UpdateState): UpdateState { 👍
 }
 ```
 
-3. **middleware** result function must call **next** in body
+3. function that returned from **middleware** must call **next** in body
 
 ```js
 function exampleMiddleware(next: UpdateState): UpdateState { 👍
@@ -128,7 +128,7 @@ function exampleMiddleware(next: UpdateState): UpdateState { 👎
 
 #### Underhood
 
-When **initStore** will be called then **middlewares** will be chained (from zero index to last) by closure
+When **initStore** is called then **middlewares** will be chained (from zero index to last) by closure
 
 ```js
 function logMiddleware(next: UpdateState): UpdateState { ... }

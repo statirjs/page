@@ -6,7 +6,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/statirjs/react/badge.svg?branch=dev&service=github)](https://coveralls.io/github/statirjs/react?branch=dev&service=github)
 [![Discord](https://img.shields.io/discord/713451221901508720?label=discord)](https://discord.gg/9kezggD)
 
-**"@statirjs/react"** it is **@statirjs/core** connector to [**react**](https://reactjs.org/) components by context
+**"@statirjs/react"** is **@statirjs/core** connector to [**react**](https://reactjs.org/) components by context
 
 Repo: https://github.com/statirjs/react
 

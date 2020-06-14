@@ -24,9 +24,9 @@ npm run docsify:serve
 
 1. no dots
 
-2. numeric/dots lists items starts from lower case
+2. numeric/dots list items start from lower case
 
-3. new lines starts from upper case
+3. new lines start from upper case
 
 4. use article titles
 
@@ -40,15 +40,15 @@ npm run docsify:serve
 
 #### Common requirements
 
-1. don't forget change related file: top home.md
+1. don't forget to change related file: top home.md
 
-2. don't forget change related file: local home.md
+2. don't forget to change related file: local home.md
 
-3. don't forget change related file: top \_sidebar.md
+3. don't forget to change related file: top \_sidebar.md
 
 #### Sending a pull request
 
-For new feature or bugs fix, please open an issue with a proposal (do not forget code refactoring, stylings and tests). Main steps to create pull request:
+For new feature or bug fix, please open an issue with a proposal (do not forget code refactoring, stylings and tests). Main steps to create pull request:
 
 1. fork the repo
 

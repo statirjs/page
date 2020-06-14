@@ -1,6 +1,6 @@
-# MILESTONE №3 (June 7, 2020 - today)
+# MILESTONE №3 (June 7, 2020 - June 14, 2020)
 
-- [ ] Fix grammar errors
+- [x] Fix grammar errors
 - [x] Extend home page
 - [x] Fix useSelect name
 - [x] Fix useDispatch name

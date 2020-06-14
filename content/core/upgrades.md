@@ -2,11 +2,11 @@
 
 #### Description
 
-**"Upgrade"** in **@statirjs/core** used to extend [**store**](/content/core/store.md) creation proccess. Its mean that with **upgrades** user can change **store** init config before **store** will initiated and do some extra check/work in pre-init stage
+**"Upgrade"** in **@statirjs/core** is used to extend [**store**](/content/core/store.md) creation proccess. It means that with **upgrades** user can change **store** init config before **store** is initiated and do some extra check/work in pre-init stage
 
 #### Declaration
 
-**Upgrade** it is function that return function, that's all
+**Upgrade** is function that returns function, that's all
 
 ```js
 function exampleUpgrade(next: CreateStore): CreateStore {
@@ -18,7 +18,7 @@ function exampleUpgrade(next: CreateStore): CreateStore {
 
 #### Cases
 
-For example we have [**react**](https://reactjs.org/) app with **@statirjs/core** on board and we want use [**redux-devtool**](https://github.com/reduxjs/redux-devtools) as usual. To connect **@statirjs/core** to **devtool** user can use **upgrade** mechanism
+For example we have [**react**](https://reactjs.org/) app with **@statirjs/core** on board and we want to use [**redux-devtool**](https://github.com/reduxjs/redux-devtools) as usual. To connect **@statirjs/core** to **devtool** user can use **upgrade** mechanism
 
 ```js
 function reduxDevtoolsUpgrade(next: CreateStore): CreateStore {
@@ -42,11 +42,11 @@ function reduxDevtoolsUpgrade(next: CreateStore): CreateStore {
 }
 ```
 
-> **NOTE:** **redux-devtool** is build-in **@statirjs/core** **upgrade** and it is not need to connect this functionality by hand
+> **NOTE:** **redux-devtool** is built-in **@statirjs/core** **upgrade** and it is not needed to connect this functionality by hand
 
 #### Arguments
 
-**Upgrade** function receive one argument:
+**Upgrade** function receives one argument:
 
 1. **upgrade** function must take **next** argument
 
@@ -54,13 +54,13 @@ function reduxDevtoolsUpgrade(next: CreateStore): CreateStore {
 function exampleUpgrade(next: CreateStore) { ... } 👍
 ```
 
-2. **next** it is function that take **config** object
+2. **next** is function that takes **config** object
 
 ```js
 type CreateStore = (config: Config) => Store; 👍
 ```
 
-3. **config** it is init **store** config object
+3. **config** is init **store** config object
 
 ```js
 const config: Config = {
@@ -99,7 +99,7 @@ const store = initStore({ 👍
 });
 ```
 
-1. **upgrade** must return function with **next**-like signature
+2. **upgrade** must return function with **next**-like signature
 
 ```js
 function exampleUpgrade(next: CreateStore): CreateStore { 👍
@@ -107,7 +107,7 @@ function exampleUpgrade(next: CreateStore): CreateStore { 👍
 }
 ```
 
-3. **upgrade** result function must call **next** in body and return inited store
+3. function returned from **upgrade** must call **next** in body and return inited store
 
 ```js
 function exampleUpgrade(next: CreateStore): CreateStore { 👍
@@ -141,7 +141,7 @@ function exampleUpgrade(next: CreateStore): CreateStore { 👎
 
 #### Underhood
 
-When **initStore** will be called then **upgrades** will be chained (from zero index to last) by closure. In simplified pseudo implementation it will be like this
+When **initStore**is called then **upgrades** will be chained (from zero index to last) by closure. In simplified pseudo implementation it will be like this
 
 ```js
 function devtoolUpgrade(next: CreateStore): CreateStore { ... }

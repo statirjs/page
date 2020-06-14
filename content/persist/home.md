@@ -1,4 +1,4 @@
-# @statirjs/react
+# @statirjs/persist
 
 [![build status](https://travis-ci.com/statirjs/persist.svg?branch=dev)](https://travis-ci.com/github/statirjs/persist)
 [![npm version](https://img.shields.io/npm/v/@statirjs/persist)](https://www.npmjs.com/package/@statirjs/persist)

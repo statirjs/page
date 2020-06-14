@@ -53,12 +53,12 @@ export function App() {
 4. import and use hooks
 
 ```js
-import { useSelector, useDispath } from "@statirjs/react";
+import { useSelect, useDispatch } from "@statirjs/react";
 
 export function Counter() {
-  const count = useSelector((rootState) => rootState.counter.count);
+  const count = useSelect((rootState) => rootState.counter.count);
 
-  const increment = useDispath((dispatch) => dispatch.counter.increment);
+  const increment = useDispatch((dispatch) => dispatch.counter.increment);
 
   return (
     <div>
@@ -76,10 +76,10 @@ export function Counter() {
 > type IDispatch = typeof store.dispatch;
 >
 > function useOwnSelector<T>(selector: (rootState: IState) => T): T {
->   return useSelector(selector);
+>   return useSelect(selector);
 > }
 >
 > function useOwnDispatch<T>(selector: (dispatch: IDispatch) => T): T {
->   return useDispath(selector);
+>   return useDispatch(selector);
 > }
 > ```

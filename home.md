@@ -10,6 +10,8 @@
 
 3. [**page**](/content/page/home.md) project - documentation knowledge center
 
+4. [**persist**](/content/persist/home.md) project - [**upgrade**](/content/persist/upgrade.md) for saving state in **storage**
+
 **Statirjs** not depend on any platforms and frameworks. It is tiny (core ~ [**2.2 KB**](https://bundlephobia.com/result?p=@statirjs/core)) and not have external dependencies
 
 #### Index
@@ -26,7 +28,12 @@
   - [**Quick start**](/content/react/quick_start.md)
   - [**Provider**](/content/react/provider.md)
   - [**useDispatch**](/content/react/use_dispatch.md)
-  - [**useSelector**](/content/react/use_selector.md)
+  - [**useSelect**](/content/react/use_select.md)
   - [**Contributing guide**](/content/react/contributing_guide.md)
+- [**@statirjs/persist**](/content/persist/home.md)
+  - [**Quick start**](/content/persist/quick_start.md)
+  - [**Persist gate**](/content/persist/persist_gate.md)
+  - [**Upgrade**](/content/persist/upgrade.md)
+  - [**Contributing guide**](/content/persist/contributing_guide.md)
 - [**@statirjs/page**](/content/page/home.md)
   - [**Contributing guide**](/content/page/contributing_guide.md)

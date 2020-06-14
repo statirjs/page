@@ -28,7 +28,7 @@ export function App() {
 <Provider store={store}>
 ```
 
-2. components that use **store** must be setted as child
+2. components that use **store** must be settled as child
 
 ```js
 <Provider store={store}>

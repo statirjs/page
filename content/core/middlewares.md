@@ -62,7 +62,8 @@ const update: Update = {
     counter: { count: 0 }, // root state before updating
   },
   formeName: "counter", // name of forme called by dispatch
-  actionName: "increment", // name of pipes or actions called by dispatch
+  actionName: "increment", // name of pipes or actions called by dispatch,
+  disable: false, // optional value (default = false). if true then rootState will not update and listeners will not calls
 };
 ```
 

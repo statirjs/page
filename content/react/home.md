@@ -15,7 +15,7 @@ Repo: https://github.com/statirjs/react
 - [**Quick start**](/content/react/quick_start.md)
 - [**Provider**](/content/react/provider.md)
 - [**useDispatch**](/content/react/use_dispatch.md)
-- [**useSelector**](/content/react/use_selector.md)
+- [**useSelect**](/content/react/use_select.md)
 - [**Contributing guide**](/content/react/contributing_guide.md)
 
 #### Discord

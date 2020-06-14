@@ -2,6 +2,15 @@
 
 - [ ] Fix grammar errors
 - [ ] Extend home page
+- [x] Fix useSelect name
+- [x] Fix useDispatch name
+- [x] Extend Update interface
+- [x] Add persist hello doc
+- [x] Add persist quick start doc
+- [x] Add persist gate doc
+- [x] Add persist createUpgrade doc
+- [x] Add persist contributing guide doc
+- [x] Fix badge size link
 
 # MILESTONE №2 (May 31, 2020 - June 7, 2020)
 
@@ -10,7 +19,7 @@
 - [x] Update README
 - [x] Add react quick start doc
 - [x] Add react provider doc
-- [x] Add react useSelector doc
+- [x] Add react useSelect doc
 - [x] Add react useDispatch home
 - [x] Add react contributing guide doc
 

@@ -260,7 +260,7 @@ const counterBuilder = () => ({ 👍
   },
 });
 
-// Exacution order
+// Execution order
 // 'push'
 // 'core'
 // 'done'
@@ -278,7 +278,7 @@ const counterBuilder = () => ({ 👍
   },
 });
 
-// Exacution order
+// Execution order
 // 'push'
 // 'core'
 // 'fail'

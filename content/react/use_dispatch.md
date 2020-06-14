@@ -7,10 +7,10 @@
 #### Cases
 
 ```js
-import { useDispath } from "@statirjs/react";
+import { useDispatch } from "@statirjs/react";
 
 export function CounterButton() {
-  const increment = useDispath((dispatch) => dispatch.counter.increment);
+  const increment = useDispatch((dispatch) => dispatch.counter.increment);
 
   return <button onClick={increment}>Increment me</button>;
 }
@@ -25,7 +25,7 @@ function selector(dispatch) {
   return dispatch.counter.increment;
 }
 
-const increment = useDispath(selector);
+const increment = useDispatch(selector);
 ```
 
 > **NOTE:** for [**typescript**](https://www.typescriptlang.org/) it is possible to re-declare hook with your own types
@@ -34,20 +34,20 @@ const increment = useDispath(selector);
 > type IDispatch = typeof store.dispatch;
 >
 > function useOwnDispatch<T>(selector: (dispatch: IDispatch) => T): T {
->   return useDispath(selector);
+>   return useDispatch(selector);
 > }
 > ```
 
 #### Common requirements
 
-1. select one action function per **useDispath** usage
+1. select one action function per **useDispatch** usage
 
 ```js
-const increment = useDispath((dispatch) => dispatch.counter.increment); 👍
+const increment = useDispatch((dispatch) => dispatch.counter.increment); 👍
 
-const counterActions = useDispath((dispatch) => dispatch.counter); 👎
+const counterActions = useDispatch((dispatch) => dispatch.counter); 👎
 
-const dispatch = useDispath((dispatch) => dispatch); 👎
+const dispatch = useDispatch((dispatch) => dispatch); 👎
 ```
 
 2. common **react** hooks requirements
